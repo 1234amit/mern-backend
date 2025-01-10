@@ -6,8 +6,11 @@ import bodyParser from "body-parser";
 import todoRouter from "./routes/todos.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import Redis from "ioredis";
 
 const app = express();
+const redisClient = new Redis();
+
 dotenv.config();
 
 connectDb();
@@ -16,7 +19,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(
   cors({
-    origin: "http://localhost:5173", // Allow only your frontend origin
+    origin: "http://localhost:5174", // Allow only your frontend origin
     credentials: true, // Allow credentials (cookies, auth headers, etc.)
   })
 );

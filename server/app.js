@@ -6,10 +6,10 @@ import bodyParser from "body-parser";
 import todoRouter from "./routes/todos.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
-import Redis from "ioredis";
+// import Redis from "ioredis";
 
 const app = express();
-const redisClient = new Redis();
+// const redisClient = new Redis();
 
 dotenv.config();
 

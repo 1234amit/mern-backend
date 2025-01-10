@@ -63,7 +63,7 @@ const AddTodo = () => {
     const fetchTodos = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:8000/api/v1/todo/todosAll",
+          "https://basic-todo-application.onrender.com/api/v1/todo/todosAll",
           {
             headers: {
               "Content-Type": "application/json",

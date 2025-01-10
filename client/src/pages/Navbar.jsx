@@ -18,7 +18,7 @@ const Navbar = () => {
 
     try {
       // Make the logout request
-      await axios.get("http://localhost:8000/api/v1/user/logout", null, {
+      await axios.get("https://basic-todo-application.onrender.com/api/v1/user/logout", null, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("authToken")}`,
         },

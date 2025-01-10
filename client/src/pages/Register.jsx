@@ -3,8 +3,9 @@ import axios from "axios";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { toast } from "@/hooks/use-toast";
+// import { toast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -41,7 +42,7 @@ const Register = () => {
       );
 
       if (res.data.success) {
-        toast({
+        toast.success({
           title: "Registration Successful",
           description: res.data.message,
         });

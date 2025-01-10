@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button"; // ShadCN Button component
 import { Menu } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+// import toast from "react-hot-toast";
+import { ToastContainer, toast } from "react-toastify";
 
 const Navbar = () => {
   const [loading, setLoading] = useState(false); // To handle loading state during logout
@@ -25,9 +27,12 @@ const Navbar = () => {
       // Remove the auth token from localStorage
       localStorage.removeItem("authToken");
 
-      navigate("/"); // Or navigate("/");
+      // navigate("/"); // Or navigate("/");
 
-      alert("You have logged out successfully!");
+      toast.success("You have logged out successfully!");
+      setTimeout(() => {
+        navigate("/"); // Or navigate("/");
+      }, 1000);
     } catch (error) {
       console.error("Logout error:", error);
       alert("An error occurred while logging out. Please try again.");

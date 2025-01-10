@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import axios from "axios"; // Import axios
-import { toast } from "@/hooks/use-toast";
+// import { toast } from "@/hooks/use-toast";
 import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -46,7 +47,7 @@ const Login = () => {
 
       localStorage.setItem("authToken", token);
 
-      toast({
+      toast.success({
         title: "Success",
         description: "You have logged in successfully!",
         variant: "default", // Show success variant
@@ -55,7 +56,7 @@ const Login = () => {
       navigate("/add-todo"); // Use navigate instead of Navigate component
     } catch (error) {
       console.error("Login error:", error);
-      toast({
+      toast.error({
         title: "Error",
         description: "An error occurred during login.",
         variant: "destructive", // Show error variant
